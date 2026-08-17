@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500" font-family="Tahoma, 'Segoe UI', Arial, sans-serif">
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0.4" r="0.78">
+      <stop offset="0" stop-color="#fdf6e6"/>
+      <stop offset="0.6" stop-color="#f3e3bf"/>
+      <stop offset="1" stop-color="#dfc088"/>
+    </radialGradient>
+    <linearGradient id="brownGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5d4832"/>
+      <stop offset="1" stop-color="#3a2c1d"/>
+    </linearGradient>
+    <linearGradient id="lidGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b543b"/>
+      <stop offset="1" stop-color="#4a3a27"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0d47e"/>
+      <stop offset="0.5" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#a8871e"/>
+    </linearGradient>
+    <linearGradient id="neckGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b9952b"/>
+      <stop offset="1" stop-color="#8a6d1f"/>
+    </linearGradient>
+    <linearGradient id="capGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8a6d1f"/>
+      <stop offset="1" stop-color="#5c4713"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d64545"/>
+      <stop offset="1" stop-color="#a82626"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#3a2c1d" flood-opacity="0.28"/>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="badgeShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#3a2c1d" flood-opacity="0.35"/>
+    </filter>
+    <g id="leaf">
+      <path d="M0,0 C 30,-46 88,-46 104,0 C 88,46 30,46 0,0 Z" fill="#7d9b4d"/>
+      <path d="M10,0 C 40,0 76,0 92,0" stroke="#5d7a36" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M28,-8 C 40,-18 58,-22 70,-20 M28,8 C 40,18 58,22 70,20" stroke="#5d7a36" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8"/>
+    </g>
+    <g id="drop">
+      <path d="M0,-20 C 16,-2 16,14 0,22 C -16,14 -16,-2 0,-20 Z" fill="#d9c46a" opacity="0.85"/>
+      <circle cx="-3" cy="10" r="3" fill="#fff" opacity="0.7"/>
+    </g>
+    <g id="check">
+      <circle cx="0" cy="0" r="19" fill="#7d9b4d"/>
+      <path d="M-9,0 l6,7 l13,-14" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="star">
+      <path d="M0,-20 L6,-6 L21,-6 L9,4 L13,19 L0,10 L-13,19 L-9,4 L-21,-6 L-6,-6 Z" fill="#f5b301"/>
+    </g>
+  </defs>
+
+  <!-- Studio background -->
+  <rect width="1500" height="1500" fill="url(#bg)"/>
+
+  <!-- ============ URGENCY RIBBON ============ -->
+  <g transform="rotate(-1.5 750 90)">
+    <rect x="150" y="34" width="1200" height="96" rx="48" fill="url(#redGrad)" filter="url(#badgeShadow)"/>
+    <rect x="150" y="34" width="1200" height="96" rx="48" fill="none" stroke="#f0d47e" stroke-width="5"/>
+    <text x="750" y="95" text-anchor="middle" font-size="38" font-weight="bold" letter-spacing="2" fill="#fff">🔥 الأكثر مبيعاً في المغرب — أكثر من 500 طلب ناجح 🇲🇦</text>
+  </g>
+
+  <!-- Ground shadow -->
+  <ellipse cx="750" cy="1235" rx="500" ry="50" fill="#3a2c1d" opacity="0.16" filter="url(#soft)"/>
+
+  <!-- ===================== BOX ===================== -->
+  <g filter="url(#shadow)">
+    <!-- lid -->
+    <rect x="276" y="190" width="948" height="112" rx="26" fill="url(#lidGrad)"/>
+    <rect x="276" y="190" width="948" height="26" rx="13" fill="#3a2c1d" opacity="0.25"/>
+    <rect x="276" y="246" width="948" height="10" rx="5" fill="#d4af37"/>
+    <text x="1170" y="268" text-anchor="end" font-size="26" letter-spacing="2" fill="#e8d9b8" opacity="0.85" font-family="Georgia, serif">IG: oil.soin</text>
+
+    <!-- body -->
+    <rect x="300" y="300" width="900" height="700" rx="40" fill="url(#brownGrad)"/>
+    <rect x="1152" y="300" width="48" height="700" rx="24" fill="#2c2115" opacity="0.35"/>
+    <rect x="300" y="952" width="900" height="48" rx="24" fill="#2c2115" opacity="0.25"/>
+
+    <!-- embossed diamonds -->
+    <g fill="#6b543b" opacity="0.35">
+      <rect x="330" y="770" width="170" height="170" rx="17" transform="rotate(45 415 855)"/>
+      <rect x="700" y="770" width="170" height="170" rx="17" transform="rotate(45 785 855)"/>
+      <rect x="1070" y="770" width="170" height="170" rx="17" transform="rotate(45 1155 855)"/>
+    </g>
+
+    <!-- gold ribbon band -->
+    <rect x="640" y="300" width="220" height="700" fill="#d4af37"/>
+    <rect x="662" y="300" width="18" height="700" fill="#e6c878" opacity="0.8"/>
+    <rect x="820" y="300" width="18" height="700" fill="#a8871e" opacity="0.8"/>
+
+    <!-- ====== LEFT: headline ====== -->
+    <text x="450" y="388" text-anchor="middle" font-size="30" font-weight="bold" letter-spacing="9" fill="#d4af37">زيت العناية</text>
+    <text x="450" y="468" text-anchor="middle" font-size="72" font-weight="bold" fill="#fdf4e0">شعر صحي</text>
+    <text x="450" y="542" text-anchor="middle" font-size="72" font-weight="bold" fill="#fdf4e0">ولامع</text>
+    <text x="450" y="620" text-anchor="middle" font-size="38" font-weight="bold" fill="#f0d47e">من أول استعمال ✨</text>
+
+    <!-- ====== RIGHT: benefits ====== -->
+    <text x="1160" y="388" text-anchor="end" font-size="32" font-weight="bold" fill="#d4af37">فوائد الزيت</text>
+    <g font-size="30" fill="#fdf4e0" font-weight="bold">
+      <use href="#check" x="1085" y="452"/>
+      <text x="1155" y="464" text-anchor="end">يمنع التساقط</text>
+      <use href="#check" x="1085" y="508"/>
+      <text x="1155" y="520" text-anchor="end">يغذي الجذور</text>
+      <use href="#check" x="1085" y="564"/>
+      <text x="1155" y="576" text-anchor="end">لمعان فوري</text>
+      <use href="#check" x="1085" y="620"/>
+      <text x="1155" y="632" text-anchor="end">قوام خفيف</text>
+    </g>
+
+    <!-- natural badge -->
+    <g>
+      <rect x="920" y="720" width="250" height="76" rx="38" fill="#fff" filter="url(#badgeShadow)"/>
+      <rect x="920" y="720" width="250" height="76" rx="38" fill="none" stroke="#d4af37" stroke-width="4"/>
+      <g transform="translate(948 758) scale(0.7)"><use href="#leaf"/></g>
+      <text x="1035" y="768" text-anchor="middle" font-size="34" font-weight="bold" fill="#4a3728">طبيعي 100%</text>
+    </g>
+  </g>
+
+  <!-- ===================== STAR RATING STICKER ===================== -->
+  <g filter="url(#badgeShadow)">
+    <rect x="330" y="308" width="290" height="56" rx="28" fill="#fff"/>
+    <use href="#star" x="360" y="336"/>
+    <use href="#star" x="390" y="336"/>
+    <use href="#star" x="420" y="336"/>
+    <use href="#star" x="450" y="336"/>
+    <use href="#star" x="480" y="336"/>
+    <text x="575" y="345" text-anchor="end" font-size="26" font-weight="bold" fill="#4a3728">4.9</text>
+  </g>
+
+  <!-- ===================== PRICE BADGE ===================== -->
+  <g filter="url(#badgeShadow)">
+    <circle cx="1200" cy="330" r="112" fill="url(#goldGrad)"/>
+    <circle cx="1200" cy="330" r="112" fill="none" stroke="#fff" stroke-width="5" opacity="0.5"/>
+    <text x="1200" y="300" text-anchor="middle" font-size="30" font-weight="bold" fill="#5c4713" text-decoration="line-through">45 درهم</text>
+    <text x="1200" y="368" text-anchor="middle" font-size="62" font-weight="bold" fill="#4a3728">30</text>
+    <text x="1200" y="408" text-anchor="middle" font-size="27" font-weight="bold" fill="#4a3728">درهم فقط</text>
+    <circle cx="1146" cy="282" r="26" fill="#5c4713"/>
+    <path d="M1146,262 a18,18 0 1 1 0,40 a13,13 0 1 0 0,-40" fill="#fff" opacity="0.9"/>
+  </g>
+
+  <!-- ===================== BOTTLE ===================== -->
+  <g filter="url(#shadow)">
+    <!-- cap -->
+    <rect x="688" y="560" width="124" height="132" rx="18" fill="url(#capGrad)"/>
+    <rect x="688" y="560" width="124" height="22" rx="11" fill="#9c7b26"/>
+    <rect x="688" y="600" width="124" height="10" fill="#9c7b26"/>
+    <rect x="688" y="656" width="124" height="10" fill="#9c7b26"/>
+    <!-- neck -->
+    <rect x="698" y="692" width="104" height="54" fill="url(#neckGrad)"/>
+    <!-- body -->
+    <rect x="620" y="746" width="260" height="470" rx="64" fill="url(#goldGrad)"/>
+    <rect x="620" y="1120" width="260" height="96" rx="48" fill="#8a6d1f" opacity="0.55"/>
+    <rect x="820" y="746" width="60" height="470" rx="30" fill="#8a6d1f" opacity="0.30"/>
+    <rect x="648" y="784" width="60" height="400" rx="30" fill="#fff" opacity="0.30"/>
+    <rect x="652" y="730" width="28" height="70" rx="14" fill="#fff" opacity="0.25"/>
+    <!-- label -->
+    <rect x="652" y="858" width="196" height="296" rx="22" fill="#fffaf0"/>
+    <rect x="652" y="858" width="196" height="296" rx="22" fill="none" stroke="#d4af37" stroke-width="6"/>
+    <text x="750" y="918" text-anchor="middle" font-size="42" font-weight="bold" fill="#4a3728">زيت</text>
+    <text x="750" y="978" text-anchor="middle" font-size="42" font-weight="bold" fill="#a8871e">العناية</text>
+    <rect x="702" y="1010" width="96" height="5" rx="2.5" fill="#d4af37"/>
+    <text x="750" y="1055" text-anchor="middle" font-size="22" letter-spacing="3" fill="#7a5c42" font-family="Georgia, serif">HAIR OIL</text>
+    <text x="750" y="1118" text-anchor="middle" font-size="50" font-weight="bold" fill="#a8871e">30 درهم</text>
+  </g>
+
+  <!-- ===================== CALL TO ACTION BANNER ===================== -->
+  <g filter="url(#shadow)">
+    <rect x="210" y="1270" width="1080" height="150" rx="42" fill="#4a3a27"/>
+    <rect x="210" y="1270" width="1080" height="150" rx="42" fill="none" stroke="#d4af37" stroke-width="6"/>
+    <rect x="210" y="1270" width="1080" height="20" rx="10" fill="#d4af37"/>
+    <text x="480" y="1346" text-anchor="middle" font-size="48" font-weight="bold" fill="#fdf4e0">اطلب الآن 🛒</text>
+    <text x="480" y="1396" text-anchor="middle" font-size="27" fill="#f0d47e">توصيل لجميع المدن المغربية 📦</text>
+    <rect x="740" y="1295" width="4" height="100" fill="#d4af37" opacity="0.6"/>
+    <text x="960" y="1340" text-anchor="middle" font-size="40" font-weight="bold" fill="#fff" letter-spacing="2" font-family="Georgia, serif">06 00 00 00 00</text>
+    <text x="960" y="1392" text-anchor="middle" font-size="26" fill="#f0d47e">📸 Instagram: @oil.soin</text>
+  </g>
+
+  <!-- ===================== DECORATIONS ===================== -->
+  <g transform="translate(300 1150) rotate(-18) scale(1.1)"><use href="#leaf"/></g>
+  <g transform="translate(380 1320) rotate(-30) scale(0.9)"><use href="#leaf"/></g>
+  <g transform="translate(150 1350) rotate(-10) scale(0.85)"><use href="#leaf"/></g>
+  <g transform="translate(1200 1150) rotate(198) scale(1.1)"><use href="#leaf"/></g>
+  <g transform="translate(1280 1320) rotate(210) scale(0.9)"><use href="#leaf"/></g>
+  <g transform="translate(1330 1380) rotate(190) scale(0.85)"><use href="#leaf"/></g>
+  <g transform="translate(560 1460) rotate(-15) scale(0.65)"><use href="#leaf"/></g>
+  <g transform="translate(860 1460) rotate(195) scale(0.65)"><use href="#leaf"/></g>
+
+  <g transform="translate(540 930) rotate(-25) scale(1.0)"><use href="#drop"/></g>
+  <g transform="translate(470 1000) rotate(-40) scale(0.75)"><use href="#drop"/></g>
+  <g transform="translate(935 915) rotate(25) scale(0.95)"><use href="#drop"/></g>
+  <g transform="translate(1005 985) rotate(40) scale(0.7)"><use href="#drop"/></g>
+
+  <g fill="#d4af37">
+    <path d="M210,420 l14,42 42,14 -42,14 -14,42 -14,-42 -42,-14 42,-14 Z"/>
+    <path d="M1240,520 l10,30 30,10 -30,10 -10,30 -10,-30 -30,-10 30,-10 Z" opacity="0.7"/>
+    <path d="M190,760 l10,30 30,10 -30,10 -10,30 -10,-30 -30,-10 30,-10 Z" opacity="0.6"/>
+    <path d="M1290,760 l10,30 30,10 -30,10 -10,30 -10,-30 -30,-10 30,-10 Z" opacity="0.6"/>
+    <circle cx="1180" cy="150" r="7" opacity="0.8"/>
+    <circle cx="320" cy="180" r="7" opacity="0.8"/>
+  </g>
+  <g fill="#c9a227" opacity="0.55">
+    <circle cx="1180" cy="470" r="5"/>
+    <circle cx="300" cy="540" r="5"/>
+    <circle cx="1240" cy="640" r="4"/>
+    <circle cx="260" cy="880" r="4"/>
+  </g>
+</svg>

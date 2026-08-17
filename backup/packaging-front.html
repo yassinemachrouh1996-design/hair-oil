@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAJ OIL — Packaging Avant | Emballage Produit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { gold: '#D4AF37', goldlight: '#E5C158', golddeep: '#A8871E' },
+      fontFamily: { display: ['"Playfair Display"','serif'], serifx: ['"Cormorant Garamond"','serif'], body: ['Jost','sans-serif'], arabic: ['Amiri','serif'], arabicsans: ['Tajawal','sans-serif'] }
+    }}
+  };
+</script>
+<style>
+  body { background:#0B0B0B; }
+  .gold-frame { position:relative; }
+  .gold-frame::before, .gold-frame::after {
+    content:""; position:absolute; width:64px; height:64px; pointer-events:none;
+  }
+  .gold-frame::before { top:-14px; left:-14px; border-top:3px solid #E5C158; border-left:3px solid #E5C158; border-top-left-radius:14px; }
+  .gold-frame::after { bottom:-14px; right:-14px; border-bottom:3px solid #E5C158; border-right:3px solid #E5C158; border-bottom-right-radius:14px; }
+  .logo-ring {
+    border-radius:9999px; padding:6px;
+    background: conic-gradient(#F6DE90, #D4AF37, #A8871E, #E5C158, #F6DE90);
+    box-shadow: 0 0 70px -12px rgba(212,175,55,.55), 0 30px 60px -20px rgba(0,0,0,.9);
+    animation: rotSlow 14s linear infinite;
+  }
+  @keyframes rotSlow { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+  .headline-gold {
+    background: linear-gradient(115deg,#F6DE90 0%,#E5C158 40%,#D4AF37 65%,#A8871E 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .logo-ring > img { border-radius:9999px; animation: rotSlow 14s linear infinite reverse; width:100%; height:100%; object-fit:cover; }
+  @media print {
+    body { background:#0B0B0B; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .no-print { display:none !important; }
+  }
+</style>
+</head>
+<body class="font-body text-white antialiased">
+
+<!-- Toolbar -->
+<div class="no-print max-w-3xl mx-auto px-6 pt-10 pb-6 flex flex-wrap items-center justify-between gap-4">
+  <div>
+    <h1 class="font-display text-2xl font-bold text-goldlight">Face avant du packaging</h1>
+    <p class="text-white/50 text-sm mt-1">Feuille d'emballage TAJ OIL — nouvelle face produit avec votre logo.</p>
+  </div>
+  <button onclick="window.print()" class="px-6 py-3 rounded-full text-sm font-semibold tracking-widest uppercase text-ink" style="background:linear-gradient(135deg,#EED379,#D4AF37 45%,#A8871E);box-shadow:0 10px 26px -8px rgba(212,175,55,.6)">
+    Imprimer / PDF
+  </button>
+</div>
+
+<!-- Packaging front panel -->
+<div class="px-4 pb-16 flex justify-center">
+  <div class="gold-frame relative w-full max-w-[640px] aspect-square rounded-[2.2rem] overflow-hidden p-6 sm:p-9"
+       style="background:radial-gradient(1200px 700px at 50% 0%,#241a08 0%, #131313 55%, #0B0B0B 100%); border:1px solid rgba(212,175,55,.5);">
+
+    <!-- inner thin frame -->
+    <div class="absolute inset-3 rounded-[1.6rem] border border-gold/40 pointer-events-none"></div>
+
+    <!-- decorative corner diamonds -->
+    <div class="absolute top-7 left-7 text-goldlight/70">✦</div>
+    <div class="absolute top-7 right-7 text-goldlight/70">✦</div>
+    <div class="absolute bottom-7 left-7 text-goldlight/70">✦</div>
+    <div class="absolute bottom-7 right-7 text-goldlight/70">✦</div>
+
+    <div class="h-full flex flex-col items-center justify-center text-center gap-4 sm:gap-5 relative z-10">
+
+      <!-- Top brand wordmark -->
+      <div class="leading-none">
+        <p class="text-goldlight tracking-[0.45em] uppercase text-[11px] sm:text-sm font-semibold">Huile d'Herbes Marocaines</p>
+        <p class="font-display font-extrabold tracking-[0.25em] text-3xl sm:text-5xl mt-2 headline-gold">TAJ OIL</p>
+      </div>
+
+      <!-- divider -->
+      <div class="flex items-center gap-3 w-56 sm:w-72">
+        <span class="flex-1 h-px" style="background:linear-gradient(90deg,transparent,#D4AF37)"></span>
+        <span class="text-goldlight text-sm">✦</span>
+        <span class="flex-1 h-px" style="background:linear-gradient(90deg,#D4AF37,transparent)"></span>
+      </div>
+
+      <!-- ======= NEW LOGO ======= -->
+      <div class="logo-ring w-44 h-44 sm:w-56 sm:h-56 my-1 sm:my-2 shrink-0">
+        <img src="logo-front.png" alt="Nouveau logo TAJ OIL">
+      </div>
+      <!-- ========================= -->
+
+      <!-- divider -->
+      <div class="flex items-center gap-3 w-56 sm:w-72">
+        <span class="flex-1 h-px" style="background:linear-gradient(90deg,transparent,#D4AF37)"></span>
+        <span class="text-goldlight text-sm">✦</span>
+        <span class="flex-1 h-px" style="background:linear-gradient(90deg,#D4AF37,transparent)"></span>
+      </div>
+
+      <!-- Arabic tagline -->
+      <p class="font-arabic text-2xl sm:text-4xl text-goldlight/95 leading-snug" dir="rtl">تاج المرأة شعرها</p>
+
+      <!-- French + made in -->
+      <div class="text-white/55 text-[11px] sm:text-sm uppercase tracking-[0.3em]">
+        <p>100% Naturel · Made in Morocco 🇲🇦</p>
+        <p class="mt-1.5 text-white/40 tracking-[0.25em]">Format 100 ml · Paiement à la livraison</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Also show as it looks on the bottle (bottom) -->
+<div class="no-print max-w-3xl mx-auto px-6 pb-16">
+  <p class="text-center text-white/40 text-xs tracking-[0.3em] uppercase mb-4">Aperçu sur bouteille (vue avant)</p>
+  <div class="flex justify-center">
+    <img src="logo-front.png" alt="Nouveau logo sur bouteille" class="w-40 h-40 rounded-full shadow-[0_0_60px_-10px_rgba(212,175,55,.6)]" style="outline:6px solid rgba(212,175,55,.25); outline-offset:-2px;">
+  </div>
+</div>
+
+</body>
+</html>

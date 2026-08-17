@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>زيت العناية بالشعر</title>
+<style>
+  :root {
+    --gold: #c9a227;
+    --gold-dark: #a8871e;
+    --cream: #fbf6ec;
+    --brown: #4a3728;
+    --brown-light: #7a5c42;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    line-height: 1.7;
+  }
+
+  /* ===== Header ===== */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 6%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .logo { font-size: 22px; font-weight: 800; color: var(--brown); }
+  .logo span { color: var(--gold); }
+
+  .price-pill {
+    background: var(--gold);
+    color: #fff;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    text-align: center;
+    padding: 60px 6% 40px;
+    background: linear-gradient(160deg, #fff 0%, var(--cream) 100%);
+  }
+
+  .hero .badge {
+    display: inline-block;
+    background: #fdf2d8;
+    color: var(--gold-dark);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 900;
+    color: var(--brown);
+    margin-bottom: 10px;
+  }
+
+  .hero p.sub {
+    font-size: clamp(15px, 2.5vw, 18px);
+    color: var(--brown-light);
+    max-width: 640px;
+    margin: 0 auto 26px;
+  }
+
+  .bottle {
+    width: 190px;
+    height: 300px;
+    margin: 20px auto 0;
+    position: relative;
+    background: linear-gradient(180deg, #e8c76a, var(--gold));
+    border-radius: 28px 28px 46px 46px;
+    box-shadow: 0 18px 40px rgba(201, 162, 39, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bottle::before {
+    content: "";
+    position: absolute;
+    top: -34px;
+    width: 46px;
+    height: 36px;
+    background: var(--gold-dark);
+    border-radius: 6px 6px 0 0;
+  }
+
+  .bottle::after {
+    content: "";
+    position: absolute;
+    top: 56px;
+    left: 16px;
+    width: 70%;
+    height: 200px;
+    background: rgba(255,255,255,0.22);
+    border-radius: 20px;
+  }
+
+  .bottle .label {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    width: 128px;
+    height: 170px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    color: var(--brown);
+  }
+
+  .bottle .label .small { font-size: 11px; color: var(--brown-light); }
+  .bottle .label .big { font-size: 20px; font-weight: 900; margin: 4px 0; color: var(--gold-dark); }
+
+  /* ===== Price ===== */
+  .price-box {
+    margin: 40px auto 0;
+    max-width: 560px;
+    background: #fff;
+    border: 2px dashed var(--gold);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(201,162,39,0.15);
+  }
+
+  .price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .price-amount {
+    font-size: clamp(38px, 7vw, 58px);
+    font-weight: 900;
+    color: var(--gold-dark);
+  }
+
+  .price-unit { font-size: 18px; color: var(--brown-light); }
+
+  .count-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 16px 0 4px;
+  }
+
+  .count-box button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: #fff;
+    color: var(--gold-dark);
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .count-box .count {
+    font-size: 26px;
+    font-weight: 800;
+    min-width: 40px;
+    text-align: center;
+  }
+
+  .total {
+    font-size: 17px;
+    color: var(--brown-light);
+    margin-bottom: 16px;
+  }
+  .total strong { color: var(--gold-dark); font-size: 20px; }
+
+  /* ===== Buttons ===== */
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 800;
+    padding: 14px 34px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(201,162,39,0.4);
+  }
+
+  .btn-outline {
+    background: #fff;
+    color: var(--brown);
+    border: 2px solid var(--brown);
+  }
+
+  .btn-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(220,39,67,0.35);
+  }
+
+  /* ===== Sections ===== */
+  section { padding: 50px 6%; }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 900;
+    margin-bottom: 30px;
+  }
+
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .benefit {
+    background: #fff;
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  }
+
+  .benefit .icon {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #fdf2d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+  }
+
+  .benefit h3 { font-size: 17px; margin-bottom: 6px; }
+  .benefit p { font-size: 14px; color: var(--brown-light); }
+
+  /* ===== Testimonials ===== */
+  .reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .review {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  }
+
+  .review .stars { color: var(--gold); font-size: 18px; margin-bottom: 8px; }
+  .review p { font-size: 14px; font-style: italic; margin-bottom: 10px; }
+  .review .name { font-size: 13px; font-weight: 700; color: var(--brown-light); }
+
+  /* ===== How to order ===== */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    text-align: center;
+  }
+
+  .step .num {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #fff;
+    font-weight: 800;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .step p { font-size: 15px; }
+
+  /* ===== Order form ===== */
+  .order-box {
+    max-width: 520px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.08);
+  }
+
+  .order-box label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 14px 0 6px;
+  }
+
+  .order-box input,
+  .order-box textarea,
+  .order-box select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #e3d9c6;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--brown);
+    background: #fdfbf6;
+  }
+
+  .order-box input:focus,
+  .order-box textarea:focus,
+  .order-box select:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+
+  .order-box .btn { width: 100%; margin-top: 18px; }
+
+  /* ===== Contact ===== */
+  .contact-box {
+    text-align: center;
+    max-width: 520px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.08);
+  }
+
+  .contact-box p { font-size: 16px; margin-bottom: 18px; color: var(--brown-light); }
+
+  /* ===== Instagram showcase ===== */
+  .insta-wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 24px;
+    padding: 28px 24px 26px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.08);
+  }
+
+  .insta-top { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+
+  .avatar-ring {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    flex-shrink: 0;
+  }
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--cream);
+    border: 4px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .avatar svg { width: 130%; height: 130%; margin-top: 10px; }
+
+  .insta-meta { flex: 1; min-width: 220px; }
+
+  .insta-handle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--brown);
+  }
+
+  .insta-handle .verified {
+    font-size: 13px;
+    color: var(--gold-dark);
+  }
+
+  .insta-stats {
+    display: flex;
+    gap: 22px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--brown);
+  }
+
+  .insta-stats b { font-size: 16px; }
+
+  .insta-bio { margin-top: 12px; font-size: 14px; line-height: 1.8; }
+  .insta-bio b { color: var(--brown); }
+  .insta-bio .hash { color: #3a6ea5; }
+
+  .follow-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+
+  .follow-row .btn { padding: 10px 20px; font-size: 14px; }
+
+  .insta-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 22px 0 6px;
+  }
+
+  .insta-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 34px;
+    margin-bottom: 14px;
+  }
+
+  .insta-tab {
+    font-size: 14px;
+    font-weight: 700;
+    color: #9a9a9a;
+    padding-bottom: 8px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+  }
+
+  .insta-tab.active { color: var(--brown); border-color: var(--brown); }
+
+  .insta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .post-tile {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--cream);
+    cursor: pointer;
+    display: block;
+  }
+
+  .post-tile svg { width: 100%; height: 100%; display: block; transition: transform 0.3s ease; }
+
+  .post-tile:hover svg { transform: scale(1.08); }
+
+  .post-tile .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .post-tile:hover .overlay { opacity: 1; }
+
+  .post-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255,255,255,0.9);
+    color: var(--brown);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 999px;
+    z-index: 2;
+  }
+
+  .insta-note {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--brown-light);
+  }
+
+  @media (max-width: 480px) {
+    .insta-top { gap: 14px; }
+    .avatar-ring { width: 80px; height: 80px; }
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    text-align: center;
+    padding: 26px 6%;
+    background: var(--brown);
+    color: #f2e8d5;
+    font-size: 14px;
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 480px) {
+    .price-pill { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 🧴 Graphic of the product (used for profile picture + posts) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eccf7c"/>
+      <stop offset="1" stop-color="#a8871e"/>
+    </linearGradient>
+    <radialGradient id="bgCream" cx="0.5" cy="0.3" r="1">
+      <stop offset="0" stop-color="#fdf4e0"/>
+      <stop offset="1" stop-color="#f0dfb8"/>
+    </radialGradient>
+    <radialGradient id="bgPeach" cx="0.5" cy="0.3" r="1">
+      <stop offset="0" stop-color="#ffe8e0"/>
+      <stop offset="1" stop-color="#f3c4b0"/>
+    </radialGradient>
+    <radialGradient id="bgMint" cx="0.5" cy="0.3" r="1">
+      <stop offset="0" stop-color="#e2f4ec"/>
+      <stop offset="1" stop-color="#b7dcc9"/>
+    </radialGradient>
+    <radialGradient id="bgNight" cx="0.5" cy="0.3" r="1">
+      <stop offset="0" stop-color="#3c3a55"/>
+      <stop offset="1" stop-color="#1f1e33"/>
+    </radialGradient>
+    <radialGradient id="bgGold" cx="0.5" cy="0.3" r="1">
+      <stop offset="0" stop-color="#f7e7bd"/>
+      <stop offset="1" stop-color="#e6c878"/>
+    </radialGradient>
+    <radialGradient id="bgTerra" cx="0.5" cy="0.3" r="1">
+      <stop offset="0" stop-color="#f5e0cf"/>
+      <stop offset="1" stop-color="#e0b48f"/>
+    </radialGradient>
+
+    <!-- One bottle = the same product in every photo -->
+    <symbol id="oilBottle" viewBox="0 0 200 300">
+      <rect x="76" y="12" width="48" height="44" rx="8" fill="#7d611b"/>
+      <rect x="82" y="20" width="36" height="11" rx="5" fill="#a8871e"/>
+      <rect x="84" y="56" width="32" height="18" fill="#c9a227"/>
+      <rect x="50" y="74" width="100" height="226" rx="26" fill="url(#goldGrad)"/>
+      <rect x="61" y="92" width="24" height="168" rx="12" fill="rgba(255,255,255,0.30)"/>
+      <rect x="62" y="136" width="76" height="100" rx="10" fill="#fffaf0"/>
+      <text x="100" y="170" text-anchor="middle" font-size="15" font-weight="bold" fill="#4a3728" font-family="Tahoma, Arial, sans-serif">زيت</text>
+      <text x="100" y="194" text-anchor="middle" font-size="15" font-weight="bold" fill="#a8871e" font-family="Tahoma, Arial, sans-serif">العناية</text>
+      <text x="100" y="222" text-anchor="middle" font-size="11" fill="#7a5c42" font-family="Tahoma, Arial, sans-serif">30 درهم</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="logo">زيت<span>العناية</span></div>
+  <div class="price-pill">30 درهم فقط</div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="badge">✨ منتج أصلي 100%</div>
+  <h1>زيت العناية بالشعر</h1>
+  <p class="sub">زيت طبيعي مغربي يغذي شعرك من الجذور حتى الأطراف، يمنحه لمعاناً وقوة وحيوية بلمسة واحدة.</p>
+
+  <div class="bottle">
+    <div class="label">
+      <div class="small">زيت</div>
+      <div class="big">العناية</div>
+      <div class="small">بالشعر</div>
+    </div>
+  </div>
+
+  <div class="price-box">
+    <div class="price-row">
+      <span class="price-amount">30</span>
+      <span class="price-unit">درهم مغربي</span>
+    </div>
+    <div class="count-box">
+      <button id="minus" aria-label="نقصان">−</button>
+      <span class="count" id="count">1</span>
+      <button id="plus" aria-label="زيادة">+</button>
+    </div>
+    <div class="total">المجموع: <strong id="total">30</strong> درهم</div>
+    <a href="#order" class="btn btn-primary">🛒 اطلب الآن</a>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section id="benefits">
+  <h2 class="section-title">لماذا زيتنا؟</h2>
+  <div class="benefits">
+    <div class="benefit">
+      <div class="icon">🌿</div>
+      <h3>مكونات طبيعية</h3>
+      <p>زيوت نباتية طبيعية بدون مواد كيميائية ضارة.</p>
+    </div>
+    <div class="benefit">
+      <div class="icon">✨</div>
+      <h3>لمعان فوري</h3>
+      <p>يمنح شعرك لمعاناً صحياً من أول استعمال.</p>
+    </div>
+    <div class="benefit">
+      <div class="icon">💪</div>
+      <h3>تقوية الشعر</h3>
+      <p>يغذي بصيلات الشعر ويمنع التقصف والتساقط.</p>
+    </div>
+    <div class="benefit">
+      <div class="icon">📦</div>
+      <h3>توصيل سريع</h3>
+      <p>التوصيل لجميع المدن المغربية.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section>
+  <h2 class="section-title">ماذا قال عملاؤنا؟</h2>
+  <div class="reviews">
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>شعري صار أنعم وأكثر لمعاناً بعد أسبوع واحد فقط!</p>
+      <div class="name">سلمى - الدار البيضاء</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>زيت رائع، رائحته جميلة ويستحق كل درهم.</p>
+      <div class="name">مريم - مراكش</div>
+    </div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      <p>المنتج أصلي والتوصيل كان سريعاً. أنصح به بشدة.</p>
+      <div class="name">ياسمين - الرباط</div>
+    </div>
+  </div>
+</section>
+
+<!-- How to order -->
+<section style="background:#fdf2d8;">
+  <h2 class="section-title">كيف تطلب؟</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <p>اختر الكمية واضغط "اطلب الآن"</p>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <p>املأ اسمك ورقم هاتفك</p>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <p>أرسل الطلب وسنتواصل معك لتأكيده</p>
+    </div>
+  </div>
+</section>
+
+<!-- Order form -->
+<section id="order">
+  <h2 class="section-title">اطلب الآن</h2>
+  <div class="order-box">
+    <form id="orderForm">
+      <label for="name">الاسم الكامل *</label>
+      <input type="text" id="name" required placeholder="اكتب اسمك">
+
+      <label for="phone">رقم الهاتف *</label>
+      <input type="tel" id="phone" required placeholder="06XXXXXXXX">
+
+      <label for="city">المدينة *</label>
+      <input type="text" id="city" required placeholder="مثال: الدار البيضاء">
+
+      <label for="qty">الكمية</label>
+      <select id="qty">
+        <option value="1">1 زجاجة - 30 درهم</option>
+        <option value="2">2 زجاجتين - 60 درهم</option>
+        <option value="3">3 زجاجات - 90 درهم</option>
+        <option value="5">5 زجاجات - 150 درهم</option>
+        <option value="10">10 زجاجات - 300 درهم</option>
+      </select>
+
+      <label for="note">ملاحظات (اختياري)</label>
+      <textarea id="note" rows="3" placeholder="أي تفاصيل إضافية..."></textarea>
+
+      <button type="submit" class="btn btn-primary">إرسال الطلب عبر إنستغرام 📩</button>
+    </form>
+  </div>
+</section>
+
+<!-- Instagram page -->
+<section id="instagram">
+  <h2 class="section-title">تابعنا على إنستغرام</h2>
+  <div class="insta-wrap">
+
+    <!-- Profile header -->
+    <div class="insta-top">
+      <div class="avatar-ring">
+        <div class="avatar">
+          <svg viewBox="0 0 200 300"><use href="#oilBottle"/></svg>
+        </div>
+      </div>
+      <div class="insta-meta">
+        <div class="insta-handle">
+          @yourusername <span class="verified">✔</span>
+        </div>
+        <div class="insta-stats">
+          <span><b>6</b> منشورات</span>
+          <span><b>1,204</b> متابع</span>
+          <span><b>215</b> يتتبع</span>
+        </div>
+        <div class="insta-bio">
+          <b>زيت العناية بالشعر</b> 🌿<br>
+          زيت طبيعي مغربي — لمعان وقوة من أول استعمال ✨<br>
+          🛒 <b>30 درهم فقط</b> — التوصيل لجميع المدن 📦<br>
+          <span class="hash">#زيت_الشعر #عناية_بشعرك #منتوج_مغربي</span>
+        </div>
+        <div class="follow-row">
+          <a href="https://instagram.com/yourusername" target="_blank" rel="noopener" class="btn btn-instagram">+ متابعة</a>
+          <a href="https://ig.me/m/yourusername" target="_blank" rel="noopener" class="btn btn-outline">إرسال رسالة</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="insta-divider">
+    <div class="insta-tabs">
+      <span class="insta-tab active">☰ المنشورات</span>
+      <span class="insta-tab">🎞️ ريلز</span>
+      <span class="insta-tab">🏷️ مُشار إليه</span>
+    </div>
+
+    <!-- Product posts -->
+    <div class="insta-grid">
+      <a class="post-tile" href="https://instagram.com/yourusername" target="_blank" rel="noopener">
+        <div class="post-badge">جديد 🆕</div>
+        <svg viewBox="0 0 200 200">
+          <rect width="200" height="200" fill="url(#bgCream)"/>
+          <use href="#oilBottle" x="50" y="-20" width="100" height="150"/>
+        </svg>
+        <div class="overlay"><span>❤️ 342</span><span>💬 28</span></div>
+      </a>
+      <a class="post-tile" href="https://instagram.com/yourusername" target="_blank" rel="noopener">
+        <svg viewBox="0 0 200 200" style="filter: saturate(0.85);">
+          <rect width="200" height="200" fill="url(#bgPeach)"/>
+          <use href="#oilBottle" x="55" y="40" width="90" height="135"/>
+        </svg>
+        <div class="overlay"><span>❤️ 198</span><span>💬 15</span></div>
+      </a>
+      <a class="post-tile" href="https://instagram.com/yourusername" target="_blank" rel="noopener">
+        <svg viewBox="0 0 200 200" style="filter: brightness(1.05) contrast(1.05);">
+          <rect width="200" height="200" fill="url(#bgMint)"/>
+          <use href="#oilBottle" x="30" y="-10" width="140" height="210"/>
+        </svg>
+        <div class="overlay"><span>❤️ 265</span><span>💬 21</span></div>
+      </a>
+      <a class="post-tile" href="https://instagram.com/yourusername" target="_blank" rel="noopener">
+        <svg viewBox="0 0 200 200" style="filter: saturate(0.9) brightness(0.95);">
+          <rect width="200" height="200" fill="url(#bgNight)"/>
+          <use href="#oilBottle" x="55" y="25" width="90" height="135"/>
+        </svg>
+        <div class="overlay"><span>❤️ 430</span><span>💬 33</span></div>
+      </a>
+      <a class="post-tile" href="https://instagram.com/yourusername" target="_blank" rel="noopener">
+        <div class="post-badge">الأكثر مبيعاً 🔥</div>
+        <svg viewBox="0 0 200 200">
+          <rect width="200" height="200" fill="url(#bgGold)"/>
+          <use href="#oilBottle" x="40" y="5" width="120" height="180"/>
+        </svg>
+        <div class="overlay"><span>❤️ 512</span><span>💬 47</span></div>
+      </a>
+      <a class="post-tile" href="https://instagram.com/yourusername" target="_blank" rel="noopener">
+        <svg viewBox="0 0 200 200" style="filter: sepia(0.25);">
+          <rect width="200" height="200" fill="url(#bgTerra)"/>
+          <use href="#oilBottle" x="60" y="50" width="80" height="120"/>
+        </svg>
+        <div class="overlay"><span>❤️ 176</span><span>💬 12</span></div>
+      </a>
+    </div>
+
+    <p class="insta-note">اضغط على أي منشور لفتح صفحتنا على إنستغرام — عند إنشاء حسابك، استبدل <b>@yourusername</b> باسمك الحقيقي في مكانين داخل الكود.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 زيت العناية بالشعر — جميع الحقوق محفوظة | <a href="https://instagram.com/yourusername" target="_blank" rel="noopener">تابعنا على إنستغرام</a></p>
+</footer>
+
+<script>
+  // ===== الكمية والمجموع =====
+  var price = 30;
+  var count = 1;
+  var countEl = document.getElementById("count");
+  var totalEl = document.getElementById("total");
+  var qtySelect = document.getElementById("qty");
+
+  function updateTotal() {
+    totalEl.textContent = (price * count).toLocaleString("ar-MA");
+  }
+
+  document.getElementById("plus").addEventListener("click", function () {
+    count++;
+    countEl.textContent = count;
+    qtySelect.value = count;
+    updateTotal();
+  });
+
+  document.getElementById("minus").addEventListener("click", function () {
+    if (count > 1) {
+      count--;
+      countEl.textContent = count;
+      qtySelect.value = count;
+      updateTotal();
+    }
+  });
+
+  qtySelect.addEventListener("change", function () {
+    count = parseInt(qtySelect.value, 10);
+    countEl.textContent = count;
+    updateTotal();
+  });
+
+  // ===== إرسال الطلب إلى إنستغرام =====
+  // ✅ ضع اسم مستخدم إنستغرام الخاص بك هنا فقط — وستتحدث كل الروابط تلقائياً
+  var INSTAGRAM_USER = "yourusername";
+
+  // تحديث كل روابط إنستغرام في الصفحة من متغير واحد
+  document.querySelectorAll("a[href*='instagram.com/yourusername'], a[href*='ig.me/m/yourusername']").forEach(function (a) {
+    a.href = a.href.replace("instagram.com/yourusername", "instagram.com/" + INSTAGRAM_USER);
+    a.href = a.href.replace("ig.me/m/yourusername", "ig.me/m/" + INSTAGRAM_USER);
+  });
+
+  document.getElementById("orderForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    var name = document.getElementById("name").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var city = document.getElementById("city").value.trim();
+    var note = document.getElementById("note").value.trim();
+    var qty = document.getElementById("qty").value;
+
+    var msg = "مرحبا، أريد أن أطلب:" +
+      "\n• المنتج: زيت العناية بالشعر" +
+      "\n• الكمية: " + qty +
+      "\n• المجموع: " + (price * qty) + " درهم" +
+      "\n• الاسم: " + name +
+      "\n• الهاتف: " + phone +
+      "\n• المدينة: " + city;
+    if (note) { msg += "\n• ملاحظات: " + note; }
+
+    var url = "https://ig.me/m/" + INSTAGRAM_USER + "?text=" + encodeURIComponent(msg);
+    window.open(url, "_blank");
+  });
+</script>
+
+</body>
+</html>

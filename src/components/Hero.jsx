@@ -44,7 +44,7 @@ export default function Hero() {
               </span>
             </span>
             <a
-              href="https://www.instagram.com/taj_oil_haircare"
+              href="https://www.instagram.com/taj_oil_haircare?igsi=aWZ6eWZyd2w0cnEy"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full border border-gold/50 bg-gold/5 text-goldlight text-sm font-semibold tracking-[0.15em] hover:bg-gold/15 hover:border-gold hover:-translate-y-0.5 transition-all duration-300"

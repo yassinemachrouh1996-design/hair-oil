@@ -48,7 +48,7 @@ export default function Instagram() {
           {posts.map((post, i) => (
             <a
               key={i}
-              href="https://www.instagram.com/taj_oil_haircare"
+              href="https://www.instagram.com/taj_oil_haircare?igsi=aWZ6eWZyd2w0cnEy"
               target="_blank"
               rel="noopener noreferrer"
               className="reveal group relative block aspect-square rounded-2xl overflow-hidden border border-gold/30 hover:border-gold transition-colors duration-300"
@@ -73,7 +73,7 @@ export default function Instagram() {
 
         <div className="reveal text-center">
           <a
-            href="https://www.instagram.com/taj_oil_haircare"
+            href="https://www.instagram.com/taj_oil_haircare?igsi=aWZ6eWZyd2w0cnEy"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-gold/50 bg-gold/5 text-goldlight text-sm font-semibold tracking-[0.15em] hover:bg-gold/15 hover:border-gold hover:-translate-y-0.5 transition-all duration-300"

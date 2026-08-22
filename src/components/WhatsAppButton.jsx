@@ -1,7 +1,7 @@
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/212600000000?text=مرحبا%20تاج%20أويل،%20أريد%20طلب%20زيتك%20الطبيعي."
+      href="https://wa.me/212728166758?text=مرحبا%20تاج%20أويل،%20أريد%20طلب%20زيتك%20الطبيعي."
       aria-label="اطلب عبر واتساب"
       className="pulse-ring fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center shadow-2xl hover:scale-110 transition-transform"
     >

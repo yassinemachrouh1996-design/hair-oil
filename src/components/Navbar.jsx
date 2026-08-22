@@ -58,7 +58,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href="https://www.instagram.com/taj_oil_haircare"
+            href="https://www.instagram.com/taj_oil_haircare?igsi=aWZ6eWZyd2w0cnEy"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"

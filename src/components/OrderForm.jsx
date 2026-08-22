@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 
-const WHATSAPP_NUMBER = '212600000000'
-const PRICE = 149
+const WHATSAPP_NUMBER = '212728166758'
+const PRICE = 40
 const OLD_PRICE = 249
 
 const qtyOptions = [
@@ -84,7 +84,7 @@ export default function OrderForm() {
               <div className="flex items-end gap-3 mb-6">
                 <span className="text-4xl font-display font-bold text-gold-grad">{formatPrice(PRICE)} درهم</span>
                 <span className="text-lg text-white/40 line-through">{formatPrice(OLD_PRICE)} درهم</span>
-                <span className="ml-auto px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-400 text-xs font-semibold">-40%</span>
+                <span className="ml-auto px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-400 text-xs font-semibold">-{Math.round((1 - PRICE / OLD_PRICE) * 100)}%</span>
               </div>
               <ul className="space-y-3 text-sm text-white/70">
                 <li className="flex items-start gap-3"><span className="text-goldlight mt-0.5">✦</span> عرض الإطلاق — توصيل مجاني اليوم</li>

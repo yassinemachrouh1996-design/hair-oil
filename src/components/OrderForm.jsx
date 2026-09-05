@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 
 const WHATSAPP_NUMBER = '212728166758'
-const PRICE = 40
-const OLD_PRICE = 249
+const PRICE = 60
+const OLD_PRICE = 120
 
 const qtyOptions = [
   [1, 'زجاجة واحدة'],
@@ -35,7 +35,7 @@ export default function OrderForm() {
       `🛒 *طلب جديد من تاج أويل*` +
       `\n\n🧾 المنتج : زيت الأعشاب المغربية 100مل` +
       `\n🔢 الكمية : ${qty}` +
-      `\n💰 الإجمالي (الدفع عند الاستلام) : ${formatPrice(total)} درهم` +
+      `\n💰 الإجمالي (الدفع عند الاستلام) : ${formatPrice(total)} درهم + مصاريف الشحن` +
       `\n\n👤 الاسم : ${name}` +
       `\n📞 الهاتف : ${phone}` +
       `\n🏙️ المدينة : ${city}`
@@ -82,7 +82,7 @@ export default function OrderForm() {
                 </div>
               </div>
               <div className="flex items-end gap-3 mb-6">
-                <span className="text-4xl font-display font-bold text-gold-grad">{formatPrice(PRICE)} درهم</span>
+                <span className="text-4xl font-display font-bold text-gold-grad">{formatPrice(PRICE)} درهم + مصاريف الشحن</span>
                 <span className="text-lg text-white/40 line-through">{formatPrice(OLD_PRICE)} درهم</span>
                 <span className="ml-auto px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-400 text-xs font-semibold">-{Math.round((1 - PRICE / OLD_PRICE) * 100)}%</span>
               </div>
@@ -170,7 +170,7 @@ export default function OrderForm() {
                     >
                       {qtyOptions.map(([val, label]) => (
                         <option key={val} value={val}>
-                          {label} — {formatPrice(PRICE * val)} درهم{val === 3 ? ' (الأكثر طلباً)' : val > 1 ? ' (توفير)' : ''}
+                          {label} — {formatPrice(PRICE * val)} درهم + مصاريف الشحن{val === 3 ? ' (الأكثر طلباً)' : val > 1 ? ' (توفير)' : ''}
                         </option>
                       ))}
                     </select>
@@ -183,7 +183,7 @@ export default function OrderForm() {
                 <div className="flex items-center justify-between gap-4 px-5 py-4 rounded-xl border border-gold/30 bg-gold/5">
                   <div>
                     <p className="text-xs tracking-widest text-white/50">الإجمالي المطلوب دفعه عند الاستلام</p>
-                    <p className="font-display text-3xl font-bold text-gold-grad">{formatPrice(total)} درهم</p>
+                    <p className="font-display text-3xl font-bold text-gold-grad">{formatPrice(total)} درهم + مصاريف الشحن</p>
                   </div>
                   <span className="hidden sm:flex items-center gap-2 text-xs text-emerald-400">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">

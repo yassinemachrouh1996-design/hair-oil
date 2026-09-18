@@ -3,7 +3,6 @@ import Hero from './components/Hero'
 import Marquee from './components/Marquee'
 import Benefits from './components/Benefits'
 import Heritage from './components/Heritage'
-import Reviews from './components/Reviews'
 import OrderForm from './components/OrderForm'
 import Instagram from './components/Instagram'
 import Footer from './components/Footer'
@@ -20,7 +19,6 @@ export default function App() {
       <Marquee />
       <Benefits />
       <Heritage />
-      <Reviews />
       <OrderForm />
       <Instagram />
       <Footer />

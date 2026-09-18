@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 const navLinks = [
   { href: '#bienfaits', label: 'الفوائد' },
   { href: '#histoire', label: 'قصتنا' },
-  { href: '#avis', label: 'آراء الزبائن' },
   { href: '#commander', label: 'اطلب الآن' },
 ]
 

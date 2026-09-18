@@ -2,7 +2,6 @@ const quickLinks = [
   { href: '#accueil', label: 'الرئيسية' },
   { href: '#bienfaits', label: 'الفوائد' },
   { href: '#histoire', label: 'قصتنا' },
-  { href: '#avis', label: 'آراء الزبائن' },
   { href: '#commander', label: 'اطلب الآن' },
 ]
 
@@ -44,7 +43,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16 3a4 4 0 014 4v10a4 4 0 01-4 4H8a4 4 0 01-4-4V7a4 4 0 014-4h8zm0 4.5a.5.5 0 100-1 .5.5 0 000 1zM12 8a4 4 0 100 8 4 4 0 000-8zm0 2a2 2 0 110 4 2 2 0 010-4z" />
                 </svg>
               </SocialIcon>
-              <SocialIcon href="https://wa.me/212728166758" label="WhatsApp">
+              <SocialIcon href="https://wa.me/212720285300" label="WhatsApp">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a9 9 0 00-7.8 13.5L3 21l4.7-1.2A9 9 0 1012 3zm4.2 12.1c-.2.5-1 .9-1.5 1-1.4.2-2.7-.1-4.8-1.4-1.7-1.1-2.9-2.9-3-3-.1-.2-.7-1-.7-2s.4-1.2.6-1.4c.2-.2.4-.2.6-.2h.5c.1 0 .3-.1.5.4l.6 1.5c.1.1.1.3 0 .4l-.3.4-.3.4c-.1.1-.2.2-.1.4.1.2.5 1 1.2 1.6.9.8 1.7 1 2 1.1.2.1.4.1.5-.1l.7-.9c.1-.2.3-.2.5-.1l1.6.8c.2.1.3.2.4.3 0 .1 0 .5-.1.7z" />
                 </svg>
@@ -82,7 +81,7 @@ export default function Footer() {
                 <svg className="w-5 h-5 text-goldlight mt-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h4.6l1.6 4-2.2 1.6a12 12 0 005.4 5.4l1.6-2.2 4 1.6V19a2 2 0 01-2 2A16 16 0 013 5z" />
                 </svg>
-                <a href="tel:+212728166758" dir="ltr" className="hover:text-goldlight transition-colors">+212 7 28 16 67 58</a>
+                <a href="tel:+212720285300" dir="ltr" className="hover:text-goldlight transition-colors">+212 7 20 28 53 00</a>
               </li>
               <li className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-goldlight mt-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">

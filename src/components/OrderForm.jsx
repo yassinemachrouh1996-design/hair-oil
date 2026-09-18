@@ -1,8 +1,7 @@
 import { useState, useMemo } from 'react'
 
-const WHATSAPP_NUMBER = '212728166758'
+const WHATSAPP_NUMBER = '212720285300'
 const PRICE = 60
-const OLD_PRICE = 120
 
 const qtyOptions = [
   [1, 'زجاجة واحدة'],
@@ -16,7 +15,7 @@ function formatPrice(n) {
 }
 
 export default function OrderForm() {
-  const [qty, setQty] = useState(1)
+  const [qty, setQty] = useState(2)
   const [submitted, setSubmitted] = useState(false)
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -33,9 +32,9 @@ export default function OrderForm() {
 
     const msg =
       `🛒 *طلب جديد من تاج أويل*` +
-      `\n\n🧾 المنتج : زيت الأعشاب المغربية 100مل` +
+      `\n\n🧾 المنتج : زيت الأعشاب المغربية 50مل` +
       `\n🔢 الكمية : ${qty}` +
-      `\n💰 الإجمالي (الدفع عند الاستلام) : ${formatPrice(total)} درهم + مصاريف الشحن` +
+      `\n💰 الإجمالي (الدفع عند الاستلام) : ${formatPrice(total)} درهم — التوصيل مجاني` +
       `\n\n👤 الاسم : ${name}` +
       `\n📞 الهاتف : ${phone}` +
       `\n🏙️ المدينة : ${city}`
@@ -48,7 +47,7 @@ export default function OrderForm() {
     setName('')
     setPhone('')
     setCity('')
-    setQty(1)
+    setQty(2)
     setSubmitted(false)
   }
 
@@ -77,17 +76,18 @@ export default function OrderForm() {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-display text-lg font-bold">TAJ OIL — 100 مل</p>
-                  <p className="text-xs text-white/55">زيت أعشاب مغربية · صنع في المغرب</p>
+                  <p className="font-display text-lg font-bold">عرض خاص ومحدود — زجاجتان</p>
+                  <p className="text-xs text-white/55">زيت الأعشاب المغربية 2×50 مل · صنع في المغرب</p>
                 </div>
               </div>
-              <div className="flex items-end gap-3 mb-6">
-                <span className="text-4xl font-display font-bold text-gold-grad">{formatPrice(PRICE)} درهم + مصاريف الشحن</span>
-                <span className="text-lg text-white/40 line-through">{formatPrice(OLD_PRICE)} درهم</span>
-                <span className="ml-auto px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-400 text-xs font-semibold">-{Math.round((1 - PRICE / OLD_PRICE) * 100)}%</span>
+              <div className="flex items-end gap-3 mb-4">
+                <span className="text-4xl font-display font-bold text-gold-grad">2 قنينات ب120 درهم</span>
+                <span className="text-lg text-white/40 line-through">150 درهم</span>
+                <span className="ml-auto px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-400 text-xs font-semibold">-20%</span>
               </div>
+              <p className="text-sm text-white/60 mb-6">✦ <b className="text-white">زجاجة واحدة — 60 درهم</b></p>
               <ul className="space-y-3 text-sm text-white/70">
-                <li className="flex items-start gap-3"><span className="text-goldlight mt-0.5">✦</span> عرض الإطلاق — توصيل مجاني اليوم</li>
+                <li className="flex items-start gap-3"><span className="text-goldlight mt-0.5">✦</span> عرض خاص ومحدود — التوصيل مجاني</li>
                 <li className="flex items-start gap-3"><span className="text-goldlight mt-0.5">✦</span> الدفع 100% عند الاستلام، تأكد قبل الدفع</li>
                 <li className="flex items-start gap-3"><span className="text-goldlight mt-0.5">✦</span> توصيل خلال 24-72 ساعة إلى جميع مدن المغرب</li>
                 <li className="flex items-start gap-3"><span className="text-goldlight mt-0.5">✦</span> ضمان الرضا أو استرجاع المال</li>
@@ -170,7 +170,7 @@ export default function OrderForm() {
                     >
                       {qtyOptions.map(([val, label]) => (
                         <option key={val} value={val}>
-                          {label} — {formatPrice(PRICE * val)} درهم + مصاريف الشحن{val === 3 ? ' (الأكثر طلباً)' : val > 1 ? ' (توفير)' : ''}
+                          {label} — {formatPrice(PRICE * val)} درهم · التوصيل مجاني{val === 2 ? ' (العرض الخاص)' : val === 3 ? ' (الأكثر طلباً)' : val > 1 ? ' (توفير)' : ''}
                         </option>
                       ))}
                     </select>
@@ -183,7 +183,7 @@ export default function OrderForm() {
                 <div className="flex items-center justify-between gap-4 px-5 py-4 rounded-xl border border-gold/30 bg-gold/5">
                   <div>
                     <p className="text-xs tracking-widest text-white/50">الإجمالي المطلوب دفعه عند الاستلام</p>
-                    <p className="font-display text-3xl font-bold text-gold-grad">{formatPrice(total)} درهم + مصاريف الشحن</p>
+                    <p className="font-display text-3xl font-bold text-gold-grad">{formatPrice(total)} درهم — التوصيل مجاني</p>
                   </div>
                   <span className="hidden sm:flex items-center gap-2 text-xs text-emerald-400">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
